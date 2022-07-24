@@ -13,14 +13,22 @@ import styles from "./Myorders.module.css";
 
 const Myorders = () => {
   const [orderlist, setOrderlist] = useState([]);
+  const [total, setTotal] = useState(0);
   useEffect(() => {
     const order = async () => {
       const user_id = localStorage.getItem("user_id");
       const res = await axios.get(
-        `http://localhost:8080/api/ordered/${user_id}`
+        `https://pharmeasylion.herokuapp.com/api/ordered/${user_id}`
       );
       // console.log(res.data);
       setOrderlist(res.data);
+      let total = 0;
+
+      for (let el of res.data.orderedProduct) {
+        total += el.product.mrp * el.qty;
+      }
+
+      setTotal(total);
     };
     order();
   }, []);
@@ -60,9 +68,9 @@ const Myorders = () => {
   // console.log(list,"list")
   // console.log(orderId)
 
-  var total = localStorage.getItem("total");
+  // var total = localStorage.getItem("total");
 
-  if (list == undefined) {
+  if (list === undefined) {
     return (
       <Box>
         <Box w={"92%"} m="6rem auto auto auto" display={"flex"}>
