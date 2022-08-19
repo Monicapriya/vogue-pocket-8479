@@ -21,6 +21,7 @@
 
 .right_div{
   margin-top: 2rem;
+  /* border: 1px solid red; */
 
 }
 .right_div>div{
@@ -162,4 +163,90 @@ h4{
   padding: 0.5rem;
   width: 165vh;
   height: 40vh;
+}
+
+@media only screen and (max-width: 800px) and (min-width: 400px) {
+
+  .right_div{
+    margin-top: 2rem;
+    /* border: 1px solid red; */
+    width: 20vh;
+  
+  }
+  .order_div{
+    /* border: 1px solid red; */
+    display: flex;
+    gap:50px
+  }
+  
+  .left_div2{
+    /* border: 1px solid black; */
+    /* color:white; */
+    background-color: rgb(63,132,126);
+    border-radius: 0.5rem;
+    height: 22vh;
+    width: 40vh;
+    box-sizing: border-box;
+    padding: 1.5rem;
+  }
+  .right_div>div{
+    display: flex;
+    color: rgb(79,88,94);
+    border: 1px solid rgb(238, 233, 233);
+    border-radius: 5px;
+    height: 9vh;
+    width: 20vh;
+    margin-top: 1.4rem;
+    font-weight: 600;
+    /* border: 1px solid black; */
+  }
+  .right_div>div>p{
+ 
+    /* color: red; */
+    padding: 0.7rem;
+  
+  }
+  .imgicon{
+  
+    margin: 0.6rem;
+  
+   
+  }
+  .right_div>div>img{
+ 
+    /* color: red; */
+      margin-top: 15px;
+      /* border: 1px solid green; */
+      width: 4vh;
+      height: 3vh;
+  
+  }
+
+  .slider_1_div{
+    padding: 0.5rem;
+    /* border: 1px solid red; */
+    
+  }
+  .slider_img{
+    width: 5vh;
+    height: 5vh;
+  }
+  .slider_1_div_flex{
+    display: flex;
+    gap:15px;
+    width: 20vh;
+    height: 10vh;
+    font-size: 13px;
+    border: 1px solid rgb(238, 233, 233);
+    border-radius: 5px;
+    padding: 1rem;
+    /* border: 1px solid red; */
+  }
+  .slider_2_div>img{
+    padding: 0.5rem;
+    width: 100vh;
+    height: 25vh;
+    /* border: 1px solid red; */
+  }
+
 }

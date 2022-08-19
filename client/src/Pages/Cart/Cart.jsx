@@ -96,6 +96,17 @@ const Cart = () => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+
+    ]
   };
 
   const handleAddToCartS = (el) => {
@@ -126,11 +137,13 @@ const Cart = () => {
   };
 
   var UserId = localStorage.getItem("user_id");
+  console.log(UserId,"userid")
 
   const getCartdata = async () => {
     await axios
       .get(`https://pharmeasylion.herokuapp.com/api/cart/${UserId}`)
       .then(({ data }) => {
+        console.log(data,"data")
         setCartdata(data);
       });
   };
